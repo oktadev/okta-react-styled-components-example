@@ -9,7 +9,6 @@ import {
 } from './CalendarComponents'
 
 export class Calendar extends Component {
-
   constructor(props) {
     super(props);
     this.state = {
@@ -27,7 +26,7 @@ export class Calendar extends Component {
     const today = moment();
 
     for (let w=0; w<firstWeekday; w++) {
-      calendarDays.push(<Day></Day>);
+      calendarDays.push(<Day/>); // empty days
     }
 
     for (let d=1; d<lastDate; d++) {
@@ -35,7 +34,7 @@ export class Calendar extends Component {
     }
 
     while (calendarDays.length % 7 !== 0) {
-      calendarDays.push(<Day></Day>);
+      calendarDays.push(<Day/>);
     }
 
     return calendarDays;
@@ -69,3 +68,4 @@ export class Calendar extends Component {
     </CalendarWrapper>;
   }
 }
+
